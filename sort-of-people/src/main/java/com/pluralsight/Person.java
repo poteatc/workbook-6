@@ -46,6 +46,7 @@ public class Person implements Comparable {
 
     @Override
     public int compareTo(Object o) {
+        if (o == null) throw new NullPointerException("Object is null...");
         Person p1 = (Person) o;
         return this.age - p1.age;
     }
