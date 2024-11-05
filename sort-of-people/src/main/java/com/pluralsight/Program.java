@@ -3,6 +3,7 @@ package com.pluralsight;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+//import java.util.function.Consumer;
 
 public class Program {
     public static void main(String[] args) {
@@ -22,12 +23,17 @@ public class Program {
         printList(myFamily);
 
         Collections.sort(myFamily, new PersonLastNameComparator());
+        // myFamily.sort(new PersonLastNameComparator());
         System.out.println("--Sorted by PersonLastNameComparator class overriding the compare method from Comparator interface with last names--");
-        printList(myFamily);
+        //printList(myFamily);
+        myFamily.forEach(new ManEater());
 
-        Collections.sort(myFamily, new PersonLastNameComparator());
+        //Collections.sort(myFamily, new PersonLastNameComparator());
+        myFamily.sort(new PersonFirstNameComparator());
         System.out.println("--Sorted by PersonFirstNameComparator class overriding the compare method from Comparator interface with first names--");
-        printList(myFamily);
+        //printList(myFamily);
+        myFamily.forEach(person -> System.out.println(person));
+
     }
 
     private static void printList(List<Person> people) {
