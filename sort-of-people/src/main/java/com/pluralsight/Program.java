@@ -18,11 +18,15 @@ public class Program {
         printList(myFamily);
 
         Collections.sort(myFamily);
-        System.out.println("--Sorted by Person Comparable overridden compareTo method with first names--");
+        System.out.println("--Sorted by Person Comparable overridden compareTo method with ages--");
         printList(myFamily);
 
-        Collections.sort(myFamily, new PersonComparator());
-        System.out.println("--Sorted by PersonComparator class overriding the compare method from Comparator interface with last names--");
+        Collections.sort(myFamily, new PersonLastNameComparator());
+        System.out.println("--Sorted by PersonLastNameComparator class overriding the compare method from Comparator interface with last names--");
+        printList(myFamily);
+
+        Collections.sort(myFamily, new PersonLastNameComparator());
+        System.out.println("--Sorted by PersonFirstNameComparator class overriding the compare method from Comparator interface with first names--");
         printList(myFamily);
     }
 
@@ -30,5 +34,6 @@ public class Program {
         for (Person p : people) {
             System.out.println(p);
         }
+        System.out.println();
     }
 }
