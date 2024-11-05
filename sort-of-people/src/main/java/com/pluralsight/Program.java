@@ -13,9 +13,16 @@ public class Program {
         myFamily.add( new Person("Ian", "Auston", 16) );
         myFamily.add( new Person("Zephaniah", "Hughes", 9) );
         myFamily.add( new Person("Ezra", "Aiden", 17) );
+
+        System.out.println("--Unsorted--");
         printList(myFamily);
+
         Collections.sort(myFamily);
-        System.out.println("--Sorted--");
+        System.out.println("--Sorted by Person Comparable overridden compareTo method with first names--");
+        printList(myFamily);
+
+        Collections.sort(myFamily, new PersonComparator());
+        System.out.println("--Sorted by PersonComparator class overriding the compare method from Comparator interface with last names--");
         printList(myFamily);
     }
 
