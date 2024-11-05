@@ -32,7 +32,11 @@ public class Program {
         myFamily.sort(new PersonFirstNameComparator());
         System.out.println("--Sorted by PersonFirstNameComparator class overriding the compare method from Comparator interface with first names--");
         //printList(myFamily);
+        System.out.println("--Printed with lambda expression as valid Consumer accept(Person p) method--");
         myFamily.forEach(person -> System.out.println(person));
+        // OR use functional interface
+        System.out.println("--Printed by replacing lambda with method reference--");
+        myFamily.forEach(System.out::println);
 
     }
 
